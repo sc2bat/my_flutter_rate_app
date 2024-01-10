@@ -40,28 +40,31 @@ class _MainScreenState extends State<MainScreen> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            // 기준 통화 입력창
-            MyCurrencyTextField(
-              currency: 'Base currency',
-              controller: _baseCurrencyController,
-            ),
-            MyDropdownButtonWidget(
-              baseCurruncy: _baseCurruncy,
-              drops: drops,
-            ),
-            // 대상 통화 입력창
-            MyCurrencyTextField(
-              currency: 'Targeted currency',
-              controller: _targetCurrencyController,
-            ),
-            MyDropdownButtonWidget(
-              baseCurruncy: _targetCurruncy,
-              drops: drops,
-            ),
-          ],
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              // 기준 통화 입력창
+              MyCurrencyTextField(
+                currency: 'Base currency',
+                controller: _baseCurrencyController,
+              ),
+              MyDropdownButtonWidget(
+                baseCurruncy: _baseCurruncy,
+                drops: drops,
+              ),
+              // 대상 통화 입력창
+              MyCurrencyTextField(
+                currency: 'Targeted currency',
+                controller: _targetCurrencyController,
+              ),
+              MyDropdownButtonWidget(
+                baseCurruncy: _targetCurruncy,
+                drops: drops,
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -22,7 +22,8 @@ class _MyCurrencyTextFieldState extends State<MyCurrencyTextField> {
       keyboardType: TextInputType.number,
       decoration: InputDecoration(
         labelText: widget.currency,
-        focusedBorder: const OutlineInputBorder(),
+        // focusedBorder: const OutlineInputBorder(),
+        border: const OutlineInputBorder(),
       ),
       onChanged: (value) {
         logger.info('qwerasdf $value');

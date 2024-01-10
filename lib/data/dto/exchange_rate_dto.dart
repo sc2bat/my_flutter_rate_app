@@ -1,5 +1,5 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
+// ignore_for_file: public_member_api_docs, sort_constructors_first, non_constant_identifier_names
 
 import 'package:flutter/foundation.dart';
 
@@ -13,8 +13,8 @@ class ExchangeRateDto {
   int? timeNextUpdateUnix;
   String? timeNextUpdateUtc;
   int? timeEolUnix;
-  String? baseCode;
-  Map<String, dynamic>? rates;
+  String? base_code;
+  Map<String, num>? rates;
   ExchangeRateDto({
     this.result,
     this.provider,
@@ -25,7 +25,7 @@ class ExchangeRateDto {
     this.timeNextUpdateUnix,
     this.timeNextUpdateUtc,
     this.timeEolUnix,
-    this.baseCode,
+    this.base_code,
     this.rates,
   });
 
@@ -39,8 +39,8 @@ class ExchangeRateDto {
     int? timeNextUpdateUnix,
     String? timeNextUpdateUtc,
     int? timeEolUnix,
-    String? baseCode,
-    Map<String, dynamic>? rates,
+    String? base_code,
+    Map<String, num>? rates,
   }) {
     return ExchangeRateDto(
       result: result ?? this.result,
@@ -52,7 +52,7 @@ class ExchangeRateDto {
       timeNextUpdateUnix: timeNextUpdateUnix ?? this.timeNextUpdateUnix,
       timeNextUpdateUtc: timeNextUpdateUtc ?? this.timeNextUpdateUtc,
       timeEolUnix: timeEolUnix ?? this.timeEolUnix,
-      baseCode: baseCode ?? this.baseCode,
+      base_code: base_code ?? this.base_code,
       rates: rates ?? this.rates,
     );
   }
@@ -68,7 +68,7 @@ class ExchangeRateDto {
       'timeNextUpdateUnix': timeNextUpdateUnix,
       'timeNextUpdateUtc': timeNextUpdateUtc,
       'timeEolUnix': timeEolUnix,
-      'baseCode': baseCode,
+      'base_code': base_code,
       'rates': rates,
     };
   }
@@ -95,9 +95,9 @@ class ExchangeRateDto {
           : null,
       timeEolUnix:
           map['timeEolUnix'] != null ? map['timeEolUnix'] as int : null,
-      baseCode: map['baseCode'] != null ? map['baseCode'] as String : null,
+      base_code: map['base_code'] != null ? map['base_code'] as String : null,
       rates: map['rates'] != null
-          ? Map<String, dynamic>.from((map['rates'] as Map<String, dynamic>))
+          ? Map<String, num>.from((map['rates'] as Map<String, num>))
           : null,
     );
   }
@@ -109,7 +109,7 @@ class ExchangeRateDto {
 
   @override
   String toString() {
-    return 'ExchangeRateDto(result: $result, provider: $provider, documentation: $documentation, termsOfUse: $termsOfUse, timeLastUpdateUnix: $timeLastUpdateUnix, timeLastUpdateUtc: $timeLastUpdateUtc, timeNextUpdateUnix: $timeNextUpdateUnix, timeNextUpdateUtc: $timeNextUpdateUtc, timeEolUnix: $timeEolUnix, baseCode: $baseCode, rates: $rates)';
+    return 'ExchangeRateDto(result: $result, provider: $provider, documentation: $documentation, termsOfUse: $termsOfUse, timeLastUpdateUnix: $timeLastUpdateUnix, timeLastUpdateUtc: $timeLastUpdateUtc, timeNextUpdateUnix: $timeNextUpdateUnix, timeNextUpdateUtc: $timeNextUpdateUtc, timeEolUnix: $timeEolUnix, base_code: $base_code, rates: $rates)';
   }
 
   @override
@@ -125,7 +125,7 @@ class ExchangeRateDto {
         other.timeNextUpdateUnix == timeNextUpdateUnix &&
         other.timeNextUpdateUtc == timeNextUpdateUtc &&
         other.timeEolUnix == timeEolUnix &&
-        other.baseCode == baseCode &&
+        other.base_code == base_code &&
         mapEquals(other.rates, rates);
   }
 
@@ -140,7 +140,7 @@ class ExchangeRateDto {
         timeNextUpdateUnix.hashCode ^
         timeNextUpdateUtc.hashCode ^
         timeEolUnix.hashCode ^
-        baseCode.hashCode ^
+        base_code.hashCode ^
         rates.hashCode;
   }
 }
