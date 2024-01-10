@@ -1,3 +1,5 @@
+// https://open.er-api.com/v6/latest/USD
+
 final krw = {
   "result": "success",
   "provider": "https://www.exchangerate-api.com",
