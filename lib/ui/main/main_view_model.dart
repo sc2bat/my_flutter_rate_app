@@ -28,5 +28,41 @@ class MainViewModel extends ChangeNotifier {
               .firstWhere((element) => element.code == mainState.targetCode)
               .rate,
     );
+    notifyListeners();
+  }
+
+  void inputBaseCode(String baseCode) async {
+    _mainState = mainState.copyWith(
+      baseCode: baseCode,
+      targetCurrency: mainState.baseCurrency *
+          mainState.rateResult!.rates
+              .firstWhere((element) => element.code == baseCode)
+              .rate,
+    );
+
+    notifyListeners();
+  }
+
+  void inputTargetCurrency(num targetCurrency) {
+    _mainState = mainState.copyWith(
+      targetCurrency: targetCurrency,
+      baseCurrency: targetCurrency /
+          mainState.rateResult!.rates
+              .firstWhere((element) => element.code == mainState.targetCode)
+              .rate,
+    );
+    notifyListeners();
+  }
+
+  void inputTargetCode(String targetCode) {
+    _mainState = mainState.copyWith(
+      targetCode: targetCode,
+      targetCurrency: mainState.baseCurrency *
+          mainState.rateResult!.rates
+              .firstWhere((element) => element.code == targetCode)
+              .rate,
+    );
+
+    notifyListeners();
   }
 }
